@@ -7,6 +7,7 @@ import Wheel from "./Wheel.js";
 
 // define the Cli class
 class Cli {
+  
   // TODO: update the vehicles property to accept Truck and Motorbike objects as well
   // TODO: You will need to use the Union operator to define additional types for the array
   // TODO: See the AbleToTow interface for an example of how to use the Union operator
@@ -180,10 +181,7 @@ class Cli {
       ])
       .then((answers) => {
         // TODO: Use the answers object to pass the required properties to the Truck constructor
-        // TODO: push the truck to the vehicles array
-        // TODO: set the selectedVehicleVin to the vin of the truck
-        // TODO: perform actions on the truck
-
+      
         const truck = new Truck(
           // TODO: The generateVin method is static and should be called using the class name Cli, make sure to use Cli.generateVin() for creating a truck and motorbike as well!
           Cli.generateVin(),
@@ -197,11 +195,13 @@ class Cli {
           parseInt(answers.towingCapacity),
           
         );
-        // push the car to the vehicles array
+        // TODO: push the truck to the vehicles array
         this.vehicles.push(truck);
-        // set the selectedVehicleVin to the vin of the car
+
+        // TODO: set the selectedVehicleVin to the vin of the truck
         this.selectedVehicleVin = truck.vin;
-        // perform actions on the car
+
+        // TODO: perform actions on the truck
         this.performActions();
 
       });
@@ -264,10 +264,7 @@ class Cli {
       ])
       .then((answers) => {
         // TODO: Use the answers object to pass the required properties to the Motorbike constructor
-        // TODO: push the motorbike to the vehicles array
-        // TODO: set the selectedVehicleVin to the vin of the motorbike
-        // TODO: perform actions on the motorbike
-
+        
         const motorBike = new Motorbike(
           // TODO: The generateVin method is static and should be called using the class name Cli, make sure to use Cli.generateVin() for creating a truck and motorbike as well!
           Cli.generateVin(),
@@ -279,11 +276,14 @@ class Cli {
           parseInt(answers.topSpeed),
           []
         );
-        // push the car to the vehicles array
+       
+        // TODO: push the motorbike to the vehicles array
         this.vehicles.push(motorBike);
-        // set the selectedVehicleVin to the vin of the car
+
+        // TODO: set the selectedVehicleVin to the vin of the motorbike
         this.selectedVehicleVin = motorBike.vin;
-        // perform actions on the car
+       
+        // TODO: perform actions on the motorbike
         this.performActions();
 
       });
@@ -307,11 +307,12 @@ class Cli {
         },
       ])
       .then((answers) => {
-        // TODO: check if the selected vehicle is the truck
+        const vehicleToTow = answers.vehicleToTow;
+        
         // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
         // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
-        const vehicleToTow = answers.vehicleToTow;
 
+        // TODO: check if the selected vehicle is the truck
         if(vehicleToTow === truck){
           console.log("The truck cannot tow itself");
           this.performActions();
