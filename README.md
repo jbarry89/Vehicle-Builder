@@ -21,7 +21,7 @@
   ## Usage 
   Here is an example screenshot of the Vehicle Builder Typescript application:
 
-  [Vehicle Builder Typescript Application Video Link](https://drive.google.com/file/d/1gfW2P8Ag1g1j2vHKm6AXR77Z7s4HAWeX/view)
+  [Vehicle Builder Typescript Application Video Link](https://drive.google.com/file/d/16Cm_qFqB1Qb3IGfbWpO4Qkr8AEyu2i4B/view)
 
   ![Vehicle-Builder Typescript Application Screenshot](./assets/vehicle-builder-screenshot.png)
   

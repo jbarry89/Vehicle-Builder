@@ -455,9 +455,12 @@ class Cli {
             if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Motorbike) {
               //Ensures the vehicle is a Motorbike before calling the wheelie method
               (this.vehicles[i] as Motorbike).wheelie(); 
+            }else{
+              console.log('This action is only available for Motorbikes');
+              return;
             }
           }
-          console.log('This action is only available for Motorbikes');
+          
         }
         
         else if (answers.action === 'Select or create another vehicle') {
