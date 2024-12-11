@@ -438,29 +438,31 @@ class Cli {
         // Added statements to perform the tow action only if the selected vehicle is a truck. 
         else if(answers.action === 'Tow'){
           for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Truck) {
-              
-              // Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument.
-              this.findVehicleToTow(this.vehicles[i] as Truck);
-
-              return; // return to avoid instantly calling the performActions method again
+            if (this.vehicles[i].vin === this.selectedVehicleVin) {
+              if(this.vehicles[i] instanceof Truck){
+                // Call the findVehicleToTow method to find a vehicle to tow and pass the selected truck as an argument.
+                this.findVehicleToTow(this.vehicles[i] as Truck);
+                return; // return to avoid instantly calling the performActions method again
+              }else{
+                console.log('This action is only available for Trucks');
+              }
             }
           }
-          console.log('This action is only available for Trucks');
         }
         
         // Add statements to perform the wheelie action only if the selected vehicle is a motorbike
         else if(answers.action === 'Wheelie'){
           for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Motorbike) {
+            if (this.vehicles[i].vin === this.selectedVehicleVin) {
               //Ensures the vehicle is a Motorbike before calling the wheelie method
-              (this.vehicles[i] as Motorbike).wheelie(); 
-            }else{
-              console.log('This action is only available for Motorbikes');
-              return;
+              if(this.vehicles[i] instanceof Motorbike){
+                  (this.vehicles[i] as Motorbike).wheelie(); 
+              }else{  
+                console.log('This action is only available for Motorbikes');
+              }
             }
+            
           }
-          
         }
         
         else if (answers.action === 'Select or create another vehicle') {
